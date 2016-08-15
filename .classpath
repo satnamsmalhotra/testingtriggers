@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="D:/CSA Test project/dependencies/lib/commons-lang3-3.1.jar"/>
+	<classpathentry kind="lib" path="D:/CSA Test project/dependencies/lib/crimson-1.1.3.jar"/>
+	<classpathentry kind="lib" path="D:/CSA Test project/dependencies/lib/ejb3-persistence-3.3.2.Beta1.jar"/>
+	<classpathentry kind="lib" path="D:/CSA Test project/dependencies/lib/hibernate3.jar"/>
+	<classpathentry kind="lib" path="D:/CSA Test project/dependencies/lib/javax.servlet-5.1.11.jar"/>
+	<classpathentry kind="lib" path="D:/CSA Test project/dependencies/lib/json-rpc-1.0.jar"/>
+	<classpathentry kind="lib" path="D:/CSA Test project/dependencies/lib/jsp-api-2.0.jar"/>
+	<classpathentry kind="lib" path="D:/CSA Test project/dependencies/lib/ldapjdk_4.1.jar"/>
+	<classpathentry kind="lib" path="D:/CSA Test project/dependencies/lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="D:/CSA Test project/dependencies/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="D:/CSA Test project/dependencies/lib/spring-2.0-m1.jar"/>
+	<classpathentry kind="lib" path="D:/CSA Test project/dependencies/lib/spring-orm-3.2.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/CSA Test project/dependencies/lib/spring-security-core-2.0.0.jar"/>
+	<classpathentry kind="lib" path="D:/CSA Test project/dependencies/lib/xercesImpl-2.8.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
