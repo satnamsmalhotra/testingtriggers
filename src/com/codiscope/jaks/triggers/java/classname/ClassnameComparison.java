@@ -15,9 +15,6 @@ public class ClassnameComparison {
 	}
 
 	public static void positiveTest() {
-
-		Cookie cookie = new Cookie("jsessionID", "");
-		cookie.setPath("/");
 		
 		String className = dbSrc.getClass().getName();
 		System.out.println(className);
