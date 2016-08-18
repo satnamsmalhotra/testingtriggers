@@ -16,5 +16,6 @@
 	<classpathentry kind="lib" path="D:/CSA Test project/dependencies/lib/spring-orm-3.2.3.RELEASE.jar"/>
 	<classpathentry kind="lib" path="D:/CSA Test project/dependencies/lib/spring-security-core-2.0.0.jar"/>
 	<classpathentry kind="lib" path="D:/CSA Test project/dependencies/lib/xercesImpl-2.8.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sanjay.singh/Desktop/commons-fileupload-1.3.jar/commons-fileupload-1.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
