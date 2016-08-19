@@ -2,14 +2,10 @@ package com.codiscope.jaks.triggers.java.apache.filenameutils;
 
 import org.apache.commons.io.FilenameUtils;
 
-import tests.sources.PrivateSource;
-
 /**
  * Created by ronn on 19.08.16.
  */
 public class FilenameUtilsNPEInjectionTrigger {
-
-    PrivateSource privatesource = new PrivateSource();
 
     public void apply(final String file) {
         FilenameUtils.normalize(file);
@@ -21,6 +17,5 @@ public class FilenameUtilsNPEInjectionTrigger {
 
     public void callWithNull() {
         apply(null);
-        apply(privatesource.method1());
     }
 }
