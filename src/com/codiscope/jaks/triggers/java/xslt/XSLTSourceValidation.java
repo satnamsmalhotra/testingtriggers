@@ -28,7 +28,7 @@ public class XSLTSourceValidation {
         final TransformerFactory transformerFactory = TransformerFactory.newInstance();
         final Transformer transformer = transformerFactory.newTransformer(xslt);
 
-        transformer.transform(text, new StreamResult(new FileOutputStream("./file_out")));
+        transformer.transform(text, new StreamResult(new FileOutputStream("./file_out1")));
     }
 
     public void positiveTest2() throws FileNotFoundException, TransformerException {
@@ -39,7 +39,7 @@ public class XSLTSourceValidation {
         final TransformerFactory transformerFactory = TransformerFactory.newInstance();
         final Transformer transformer = transformerFactory.newTransformer(xslt);
 
-        transformer.transform(text, new StreamResult(new FileOutputStream("./file_out")));
+        transformer.transform(text, new StreamResult(new FileOutputStream("./file_out2")));
     }
 
     private StreamSource getStreamSource() throws FileNotFoundException {
@@ -54,6 +54,6 @@ public class XSLTSourceValidation {
         final TransformerFactory transformerFactory = TransformerFactory.newInstance();
         final Transformer transformer = transformerFactory.newTransformer(xslt);
 
-        transformer.transform(text, new StreamResult(new FileOutputStream("./file_out")));
+        transformer.transform(text, new StreamResult(new FileOutputStream("./file_out3")));
     }
 }
