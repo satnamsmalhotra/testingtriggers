@@ -5,7 +5,7 @@ import org.apache.commons.io.FilenameUtils;
 import tests.sources.PrivateSource;
 
 /**
- * @author JavaSaBr
+ * @author ronn
  */
 public class TriggerNullByteInjection {
 
