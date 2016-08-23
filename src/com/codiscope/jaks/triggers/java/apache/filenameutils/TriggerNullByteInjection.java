@@ -1,18 +1,15 @@
 package com.codiscope.jaks.triggers.java.apache.filenameutils;
 
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.FilenameUtils;
 
 import tests.sources.PrivateSource;
 
 /**
- * Created by ronn on 19.08.16.
+ * @author JavaSaBr
  */
 public class TriggerNullByteInjection {
 
     private PrivateSource privateSource = new PrivateSource();
-
-    private ServletFileUpload fileUpload = new ServletFileUpload();
 
     public void positiveTest1() {
 
