@@ -2,8 +2,6 @@ package com.codiscope.jaks.triggers.java.spring.jdbc.jdotemplate;
 
 import org.springframework.orm.jdo.JdoTemplate;
 
-import java.util.Collection;
-
 import tests.sources.DatabaseSource;
 import tests.sources.FileSource;
 import tests.sources.PrivateSource;
@@ -27,20 +25,6 @@ public class JdoTemplateSqliFind {
         this.template = new JdoTemplate();
     }
 
-    public void possessiveTest() {
-
-        JdoTemplate jt = new JdoTemplate();
-        final Collection<JdoTemplateSqliFind> jdoTemplateSqliFinds = jt.find(JdoTemplateSqliFind.class);
-        final Collection<JdoTemplateSqliFind> byNamedQuery = jt.findByNamedQuery(JdoTemplateSqliFind.class, "");
-        final Collection collection = jt.find("");
-    }
-
-    public void negativeTest() {
-
-        JdoTemplate jt = new JdoTemplate();
-        jt.deletePersistent(new Object());
-    }
-
     public void testfind() {
 
         //Collection find(Class entityClass)
@@ -54,6 +38,5 @@ public class JdoTemplateSqliFind {
         //Collection find(Class entityClass, String filter, String ordering)
         template.find(DatabaseSource.class, null, websource.method2());
         //above statement is fine, engine should not give any error on this.
-
     }
 }
