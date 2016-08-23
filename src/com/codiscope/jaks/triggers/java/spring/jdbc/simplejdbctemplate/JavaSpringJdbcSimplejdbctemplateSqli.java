@@ -1,7 +1,8 @@
 package com.codiscope.jaks.triggers.java.spring.jdbc.simplejdbctemplate;
 
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.ResultSetExtractor;
+import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
+
+import javax.sql.DataSource;
 
 import tests.sources.DatabaseSource;
 import tests.sources.FileSource;
@@ -20,12 +21,45 @@ public class JavaSpringJdbcSimplejdbctemplateSqli {
     private PrivateSource privatesource = new PrivateSource();
     private WebSource websource = new WebSource();
 
-    public void test() {
-        JdbcTemplate template = new JdbcTemplate();
+    private SimpleJdbcTemplate template;
 
-        ResultSetExtractor rse = null;
+    public JavaSpringJdbcSimplejdbctemplateSqli(DataSource dataSource) {
+        this.template = new SimpleJdbcTemplate(dataSource);
+    }
 
+    public void testQuery() {
+
+        String query = "SELECT COF_NAME FROM COFFEES WHERE ID=" + websource.method2();
+
+        //Test SimpleJdbcOperations query
+        template.query(query, null);
+
+        //Test SimpleJdbcOperations queryForList
+        template.queryForList(query);
+
+        //Test SimpleJdbcOperations queryForInt
+        template.queryForInt(query);
+
+        //Test SimpleJdbcOperations queryForLong
+        template.queryForLong(query);
+
+        //Test SimpleJdbcOperations queryForMap
+        template.queryForMap(query);
+
+        //Test SimpleJdbcOperations queryForObject
+        template.queryForObject(query, String.class);
+    }
+
+    //Test SimpleJdbcOperations Update
+    public void testUpdate() {
         template.update(databasesource.method1());
-        template.query(websource.method1(), rse);
+    }
+
+    //Test SimpleJdbcOperations batchUpdate & Execute
+    public void testBatchUpdate() {
+        template.getJdbcOperations().batchUpdate(new String[]{websource.method2()});
+
+        //Test SimpleJdbcOperations execute
+        template.getJdbcOperations().execute(websource.method2());
     }
 }
