@@ -1,11 +1,7 @@
 package com.codiscope.jaks.triggers.java.apache.filenameutils;
 
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.FilenameUtils;
-
-import java.util.List;
 
 import tests.sources.PrivateSource;
 
@@ -18,7 +14,7 @@ public class TriggerNullByteInjection {
 
     private ServletFileUpload fileUpload = new ServletFileUpload();
 
-    public void positiveTest() {
+    public void positiveTest1() {
 
         final String source = privateSource.method1();
 
@@ -29,24 +25,37 @@ public class TriggerNullByteInjection {
         FilenameUtils.getBaseName(source);
     }
 
+    public void positiveTest2() {
+
+        final String source = getInvalidFileName();
+
+        FilenameUtils.normalize(source);
+        FilenameUtils.getExtension(source);
+        FilenameUtils.isExtension(source, source);
+        FilenameUtils.getName(source);
+        FilenameUtils.getBaseName(source);
+    }
+
+    private String getInvalidFileName() {
+        return new String(createInvalidFileName());
+    }
+
+    private char[] createInvalidFileName() {
+        return new char[] {'1', '2', 0, '3'};
+    }
+
     public void negativeTest() {
 
-        final List<FileItem> source;
-        try {
-            source = fileUpload.parseRequest(privateSource.getRequest());
-        } catch (FileUploadException e) {
-            throw new RuntimeException(e);
-        }
+        final String name = getFileName();
 
-        for (final FileItem fileItem : source) {
+        FilenameUtils.normalize(name);
+        FilenameUtils.getExtension(name);
+        FilenameUtils.isExtension(name, name);
+        FilenameUtils.getName(name);
+        FilenameUtils.getBaseName(name);
+    }
 
-            final String name = fileItem.getName();
-
-            FilenameUtils.normalize(name);
-            FilenameUtils.getExtension(name);
-            FilenameUtils.isExtension(name, name);
-            FilenameUtils.getName(name);
-            FilenameUtils.getBaseName(name);
-        }
+    private String getFileName() {
+        return "get file name";
     }
 }
