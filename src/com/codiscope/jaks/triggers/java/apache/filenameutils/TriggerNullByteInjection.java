@@ -5,6 +5,8 @@ import org.apache.commons.io.FilenameUtils;
 import tests.sources.PrivateSource;
 
 /**
+ * FilenameUtils not filtering null bytes
+ * GUID-640
  * @author ronn
  */
 public class TriggerNullByteInjection {

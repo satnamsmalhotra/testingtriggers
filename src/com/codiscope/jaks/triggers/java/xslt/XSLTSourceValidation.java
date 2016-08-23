@@ -14,6 +14,8 @@ import javax.xml.transform.stream.StreamSource;
 import tests.sources.PrivateSource;
 
 /**
+ * A malicious XSLT could be provided
+ * GUID-660
  * Created by ronn on 23.08.16.
  */
 public class XSLTSourceValidation {
