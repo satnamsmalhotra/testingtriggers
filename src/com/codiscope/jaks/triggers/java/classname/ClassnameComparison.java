@@ -13,11 +13,7 @@ public class ClassnameComparison {
 			System.out.println("Classname is same !!");
 		
 	}
-	public static void negativeTest2() throws ClassNotFoundException {
-		if (dbSrc.getClass().equals(dbSrc.getClass().getClassLoader().loadClass("tests.sources.DatabaseSource")))
-			System.out.println("Classname is same !!");
-	}
-	
+
 	public static void positiveTest() {
 		
 		String className = dbSrc.getClass().getName();
