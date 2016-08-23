@@ -1,5 +1,6 @@
 package com.codiscope.jaks.triggers.java.spring.mail;
 
+import org.springframework.mail.MailMessage;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 
@@ -14,14 +15,25 @@ public class SpringMailForging {
         this.mailSender = mailSender;
     }
 
-    public void sendMail(String from, String to, String subject, String msg) {
+    public void possessiveTest() {
+        MailMessage message = new SimpleMailMessage();
 
-        SimpleMailMessage message = new SimpleMailMessage();
+        message.setFrom("test@test.test");
+        message.setTo("test2@test.test");
+        message.setSubject("RE");
+        message.setText("Test message");
 
-        message.setFrom(from);
-        message.setTo(to);
-        message.setSubject(subject);
-        message.setText(msg);
+        mailSender.send((SimpleMailMessage) message);
+    }
+
+    public void negativeTest() {
+
+        SimpleMailMessage message = new SimpleMailMessage(new SimpleMailMessage());
+
+        final String from = message.getFrom();
+        final String[] to = message.getTo();
+        final String subject = message.getSubject();
+        final String text = message.getText();
 
         mailSender.send(message);
     }
