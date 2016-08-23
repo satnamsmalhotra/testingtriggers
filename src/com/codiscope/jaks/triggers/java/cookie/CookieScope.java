@@ -4,6 +4,12 @@ import javax.servlet.http.Cookie;
 
 public class CookieScope {
 
+	public void positiveTest(){
+
+		String sessionID= "";
+		Cookie cookie = new Cookie("jsessionID", sessionID);
+		cookie.setPath("/");
+	}
 	public void negativeTest(){
 		
 		String sessionID= "";
@@ -12,10 +18,5 @@ public class CookieScope {
 		cookie.setPath("/");
 	}
 
-	public void positiveTest(){
 
-		String sessionID= "";
-		Cookie cookie = new Cookie("jsessionID", sessionID);
-		cookie.setPath("/");
-	}
 }

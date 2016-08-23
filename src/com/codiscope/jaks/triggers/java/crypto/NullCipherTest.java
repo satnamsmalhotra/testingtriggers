@@ -12,7 +12,7 @@ public class NullCipherTest {
     }
 
     public void  negativeTest() throws NoSuchPaddingException, NoSuchAlgorithmException {
-        Cipher cipher = Cipher.getInstance("RSA/CBC/PKCS1Padding");
+        Cipher cipher = Cipher.getInstance("RSA/GCM/PKCS1Padding");
     }
 
     private NullCipher createNullCipher(){

@@ -6,8 +6,11 @@ import java.security.NoSuchAlgorithmException;
 
 public class PaddingOracle {
 
-    public void paddingOracle() throws NoSuchPaddingException, NoSuchAlgorithmException {
-        Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
-     }
+    public void positiveTest() throws NoSuchPaddingException, NoSuchAlgorithmException {
+        Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+    }
 
+    public void negativeTest() throws NoSuchPaddingException, NoSuchAlgorithmException {
+        Cipher cipher = Cipher.getInstance("AES/GCM/PKCS5Padding");
+    }
 }
