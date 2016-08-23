@@ -7,13 +7,12 @@ public class CookiewithoutSecureflagset {
 		
 	public void sendResponseWithFlag(HttpServletRequest request, HttpServletResponse response){
 		String sessionid = request.getSession().getId();
-		response.setHeader("SET-COOKIE", "JSESSIONID=" + sessionid + "; Secure");
+		response.setHeader("SET-COOKIE", "JSESSIONID=" + sessionid + "; Secure = true");
 	}
 	
 	public void sendResponseWithoutFlag(HttpServletRequest request, HttpServletResponse response){
 		String sessionid = request.getSession().getId();
 		response.setHeader("SET-COOKIE", "JSESSIONID=" + sessionid + "; HttpOnly");
 	}
-	
 
 }
