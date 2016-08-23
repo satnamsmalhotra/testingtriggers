@@ -4,8 +4,14 @@ package com.codiscope.jaks.triggers.java.xss;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 
+/**
+ * The class XSSRequestWrapper
+ */
 public class XSSRequestWrapper extends  HttpServletRequestWrapper{
 
+    /**
+     * The constructor of XSSRequestWrapper
+     */
     public XSSRequestWrapper(HttpServletRequest request) {
         super(request);
     }
@@ -19,7 +25,6 @@ public class XSSRequestWrapper extends  HttpServletRequestWrapper{
 
         return encodedValues;
     }
-
 
     private String strip_xss(String parameter){
         return "";
