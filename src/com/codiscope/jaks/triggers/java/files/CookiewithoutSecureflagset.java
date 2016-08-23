@@ -1,18 +1,19 @@
 package com.codiscope.jaks.triggers.java.files;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Cookie;
 
 public class CookiewithoutSecureflagset {
-		
-	public void sendResponseWithFlag(HttpServletRequest request, HttpServletResponse response){
-		String sessionid = request.getSession().getId();
-		response.setHeader("SET-COOKIE", "JSESSIONID=" + sessionid + "; Secure = true");
+	
+	public void sendResponseWithFlag(){
+		String sessionID= "";
+		Cookie cookie = new Cookie("jsessionID", sessionID);
+		cookie.setSecure(true);
 	}
 	
-	public void sendResponseWithoutFlag(HttpServletRequest request, HttpServletResponse response){
-		String sessionid = request.getSession().getId();
-		response.setHeader("SET-COOKIE", "JSESSIONID=" + sessionid + "; HttpOnly");
+	public void sendResponseWithoutFlag(){
+		String sessionID= "";
+		Cookie cookie = new Cookie("jsessionID", sessionID);
+		cookie.setSecure(false);
 	}
-
+		
 }
