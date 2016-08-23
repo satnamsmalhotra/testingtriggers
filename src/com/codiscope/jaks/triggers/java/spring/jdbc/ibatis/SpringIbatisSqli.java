@@ -1,5 +1,6 @@
 package com.codiscope.jaks.triggers.java.spring.jdbc.ibatis;
 
+import org.springframework.jdbc.support.SQLExceptionTranslator;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 
 /**
@@ -7,7 +8,7 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
  */
 public class SpringIbatisSqli {
 
-    public void execute() {
+    public void possessiveTest() {
 
         final SqlMapClientTemplate template = new SqlMapClientTemplate();
         template.queryForList("queryForList");
@@ -16,5 +17,12 @@ public class SpringIbatisSqli {
         template.delete("DELETE");
         template.update("UPDATE");
         template.insert("INSERT");
+    }
+
+    public void negativeTest() {
+
+        final SqlMapClientTemplate template = new SqlMapClientTemplate();
+        final boolean lazyInit = template.isLazyInit();
+        final SQLExceptionTranslator exceptionTranslator = template.getExceptionTranslator();
     }
 }

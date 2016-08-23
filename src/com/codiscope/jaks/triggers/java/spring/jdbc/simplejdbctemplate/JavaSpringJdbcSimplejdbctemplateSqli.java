@@ -12,11 +12,18 @@ import java.util.HashMap;
  */
 public class JavaSpringJdbcSimplejdbctemplateSqli {
 
-    public void testFind() {
+    public void possessiveTest() {
 
         SimpleJdbcTemplate jdbcTemplate = new SimpleJdbcTemplate(new DelegatingDataSource());
         jdbcTemplate.query("", new ParameterizedBeanPropertyRowMapper<Object>(), new HashMap<String, Object>());
         jdbcTemplate.update("", new HashMap<String, Object>());
         jdbcTemplate.batchUpdate("", new ArrayList<Object[]>());
+    }
+
+    public void negativeTest() {
+
+        SimpleJdbcTemplate jdbcTemplate = new SimpleJdbcTemplate(new DelegatingDataSource());
+        jdbcTemplate.queryForMap("", new HashMap<String, Object>());
+        jdbcTemplate.queryForList("", new ArrayList<String>());
     }
 }

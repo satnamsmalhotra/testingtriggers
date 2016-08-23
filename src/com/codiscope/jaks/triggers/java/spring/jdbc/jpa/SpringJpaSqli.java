@@ -9,11 +9,18 @@ import java.util.HashMap;
  */
 public class SpringJpaSqli {
 
-    public void testFind() {
+    public void possessiveTest() {
 
         JpaTemplate jpaTemplate = new JpaTemplate();
         jpaTemplate.findByNamedParams("", new HashMap<String, Object>());
         jpaTemplate.findByNamedQuery("query");
         jpaTemplate.findByNamedQuery("query", new Object());
+    }
+
+    public void negativeTest() {
+
+        JpaTemplate jpaTemplate = new JpaTemplate();
+        jpaTemplate.find("");
+        jpaTemplate.find(SpringJpaSqli.class, new Object());
     }
 }
